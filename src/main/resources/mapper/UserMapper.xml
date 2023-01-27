@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="host.luke.musicweb.dao.UserMapper">
+    <select id="getAuthByUid" parameterType="Integer" resultType="String">
+        select auth_name
+        from t_auth where auth_id in (select auth_id from t_user_auth where user_id = #{id})
+    </select>
+
+    <insert id="beUser" parameterType="Integer">
+        insert into t_user_auth (user_id,auth_id)
+        values (#{id},1)
+    </insert>
+
+</mapper>

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.IOException;
 
 @RestController
-public class TestController {
+public class CrawlerController {
     @Resource
     Crawler crawler;
     @Autowired

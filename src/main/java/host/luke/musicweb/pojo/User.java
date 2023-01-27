@@ -3,6 +3,7 @@ package host.luke.musicweb.pojo;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 @Data
@@ -10,6 +11,6 @@ import lombok.Data;
 public class User {
     @TableId(type = IdType.AUTO)
     private Integer userId;
-    private Integer userName;
-    private Integer password;
+    private String username;
+    private String password;
 }
